@@ -20,11 +20,27 @@ app.get('/',(req,res)=>{
 })
 app.use(express.static('public'))
 app.use(cookieParser())
-const corsOptoins={
-    origin:"ornate-gaufre-f8b601.netlify.app",
-    credentials:true
-}
-app.use(cors(corsOptoins))
+
+
+const allowedOrigins = [
+    'https://ornate-gaufre-f8b601.netlify.app',
+    'http://localhost:5173'
+  ];
+  
+const corsOptions = {
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true
+  };
+  
+
+  
+app.use(cors(corsOptions));
 app.use('/auth',AuthRoutes)
 app.use('/blog',BlogRoutes)
 app.use('/dashboard',DashboardRoutes)
