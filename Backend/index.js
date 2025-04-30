@@ -11,7 +11,7 @@ import PublicRoutes from './routes/Public.js'
 
 dotenv.config()
 
-const PORT=process.env.PORT || "https://blog-1-bqwx.onrender.com"
+const PORT=process.env.PORT || 1155
 const app=express()
 DBCon()
 app.use(express.json())
@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{
 app.use(express.static('public'))
 app.use(cookieParser())
 const corsOptoins={
-    origin:true,
+    origin:"ornate-gaufre-f8b601.netlify.app",
     credentials:true
 }
 app.use(cors(corsOptoins))
