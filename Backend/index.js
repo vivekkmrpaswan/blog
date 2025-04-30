@@ -11,7 +11,7 @@ import PublicRoutes from './routes/Public.js'
 
 dotenv.config()
 
-const PORT=process.env.PORT || 1155
+const PORT=process.env.PORT || "https://blog-1-bqwx.onrender.com"
 const app=express()
 DBCon()
 app.use(express.json())

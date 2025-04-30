@@ -1,5 +1,5 @@
 import axios from 'axios';
-export const BaseUrl='http://localhost:1155'
+export const BaseUrl='https://blog-1-bqwx.onrender.com'
 const instance = axios.create({
     baseURL:BaseUrl,
     // headers: {
